@@ -25,11 +25,38 @@ function showCountriesList(resp) {
                 $('<li>').text(item.demonym).appendTo(countriesList);
 		$('<li>').text(item.nativeName).appendTo(countriesList);
                 $('<li>').text(item.population).appendTo(countriesList); 
+$(function(){
+  $('li').hide();
+  $('h1').click(function(){
+    $('li').slideToggle();
+  
+  });
+});
+  });
+}
 
- 	
+  
+ /*	
 $('li').hide();
 $('h1').click(function() {
 $('li').show();
 });
 });
 }
+ $(function(){
+  var ul = $('nav').find('ul');
+  var li = ul.find('li');
+  li.mouseover(function(){
+    $(this).css('color','red');
+  });
+  li.mouseout(function(){
+    $(this).css('color','black');
+  })
+}); 
+
+$(function(){
+  $('p').hide();
+  $('button').click(function(){
+    $('p').slideToggle();
+  });
+}); */
