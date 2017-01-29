@@ -15,48 +15,26 @@ $.ajax({
   	});
 }
 
-function showCountriesList(resp) { 
-	countriesList.empty(); 
-	resp.forEach(function(item) {
-		$('<h1>').text(item.name).appendTo(countriesList);
-		$('<li>').text(item.area).appendTo(countriesList);
-		$('<li>').text(item.capital).appendTo(countriesList);
-		$('<li>').text(item.currencies).appendTo(countriesList);
-                $('<li>').text(item.demonym).appendTo(countriesList);
-		$('<li>').text(item.nativeName).appendTo(countriesList);
-                $('<li>').text(item.population).appendTo(countriesList); 
-$(function(){
-  $('li').hide();
-  $('h1').click(function(){
-    $('li').slideToggle();
-  
-  });
-});
-  });
-}
+function showCountriesList(resp) {
+ countriesList.empty();
+ resp.forEach(function(item) {
 
-  
- /*	
-$('li').hide();
-$('h1').click(function() {
-$('li').show();
-});
-});
-}
- $(function(){
-  var ul = $('nav').find('ul');
-  var li = ul.find('li');
-  li.mouseover(function(){
-    $(this).css('color','red');
-  });
-  li.mouseout(function(){
-    $(this).css('color','black');
-  })
-}); 
+    var countryDiv = $('<div class="country">');
+  $('<h1>').text(item.name).appendTo(countryDiv);
+  $('<li>').text(item.area).appendTo(countryDiv);
+  $('<li>').text(item.capital).appendTo(countryDiv);
+  $('<li>').text(item.currencies).appendTo(countryDiv);
+  $('<li>').text(item.demonym).appendTo(countryDiv);
+  $('<li>').text(item.nativeName).appendTo(countryDiv);
+  $('<li>').text(item.population).appendTo(countryDiv);
+    countryDiv.appendTo(countriesList);
 
-$(function(){
-  $('p').hide();
-  $('button').click(function(){
-    $('p').slideToggle();
+    countryDiv.find('li').hide();
+
+    countryDiv.click(function() {
+      countryDiv.find('li').slideToggle();
+    });
+
   });
-}); */
+
+}
